@@ -5,61 +5,34 @@ An end-to-end quantitative trading project that leverages machine learning to pr
 ## Project Architecture
 
 ```text
-                    Historical Market Data
-                           (Yahoo Finance)
-                                  │
-                                  ▼
-                    Data Cleaning & Preprocessing
-                                  │
-                                  ▼
-                     Exploratory Data Analysis
-                                  │
-                                  ▼
-                      Feature Engineering
-        ┌───────────────────────────────────────────────┐
-        │ Returns • Moving Averages • RSI • MACD       │
-        │ Bollinger Bands • ATR • Volatility • Lags    │
-        │ Momentum • Volume Features • Time Features   │
-        └───────────────────────────────────────────────┘
-                                  │
-                                  ▼
-                     Target Generation (5-Day Return)
-                                  │
-                                  ▼
-                    Train / Validation Split
-                                  │
-                                  ▼
-                     Machine Learning Models
-        ┌───────────────────────────────────────────────┐
-        │ Logistic Regression                           │
-        │ Decision Tree                                 │
-        │ Random Forest                                │
-        │ XGBoost (Final Model)                        │
-        └───────────────────────────────────────────────┘
-                                  │
-                                  ▼
-                    Hyperparameter Tuning & Evaluation
-                                  │
-                                  ▼
-                  Trading Signal Generation (Buy/Sell)
-                                  │
-                                  ▼
-                         Strategy Backtesting
-                                  │
-                                  ▼
-              Performance & Risk Evaluation
-        ┌───────────────────────────────────────────────┐
-        │ Total Return                                 │
-        │ Annual Return                                │
-        │ Volatility                                   │
-        │ Sharpe Ratio                                 │
-        │ Sortino Ratio                                │
-        │ Maximum Drawdown                             │
-        │ Trade Statistics                             │
-        └───────────────────────────────────────────────┘
-                                  │
-                                  ▼
-             Comparison with Buy & Hold Benchmark
+                    Yahoo Finance
+      │
+      ▼
+Data Collection
+      │
+      ▼
+Feature Engineering
+(RSI, MACD, SMA, EMA, ATR...)
+      │
+      ▼
+Target Generation
+(5-Day Price Direction)
+      │
+      ▼
+XGBoost Model
+      │
+      ▼
+Trading Signals
+(Buy / Sell)
+      │
+      ▼
+Backtesting Engine
+      │
+      ▼
+Performance Metrics
+      │
+      ▼
+ML Strategy vs Buy & Hold
 ```
 
 ## Features

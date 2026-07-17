@@ -5,7 +5,7 @@ An end-to-end quantitative trading project that leverages machine learning to pr
 ## Project Architecture
 
 ```text
-                    Yahoo Finance
+Yahoo Finance
       │
       ▼
 Data Collection

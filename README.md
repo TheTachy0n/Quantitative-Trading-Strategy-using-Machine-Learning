@@ -2,6 +2,66 @@
 
 An end-to-end quantitative trading project that leverages machine learning to predict market direction and generate trading signals using historical price data and technical indicators. The strategy is evaluated through backtesting and benchmarked against a traditional Buy & Hold approach using both return-based and risk-adjusted performance metrics.
 
+## Project Architecture
+
+```text
+                    Historical Market Data
+                           (Yahoo Finance)
+                                  │
+                                  ▼
+                    Data Cleaning & Preprocessing
+                                  │
+                                  ▼
+                     Exploratory Data Analysis
+                                  │
+                                  ▼
+                      Feature Engineering
+        ┌───────────────────────────────────────────────┐
+        │ Returns • Moving Averages • RSI • MACD       │
+        │ Bollinger Bands • ATR • Volatility • Lags    │
+        │ Momentum • Volume Features • Time Features   │
+        └───────────────────────────────────────────────┘
+                                  │
+                                  ▼
+                     Target Generation (5-Day Return)
+                                  │
+                                  ▼
+                    Train / Validation Split
+                                  │
+                                  ▼
+                     Machine Learning Models
+        ┌───────────────────────────────────────────────┐
+        │ Logistic Regression                           │
+        │ Decision Tree                                 │
+        │ Random Forest                                │
+        │ XGBoost (Final Model)                        │
+        └───────────────────────────────────────────────┘
+                                  │
+                                  ▼
+                    Hyperparameter Tuning & Evaluation
+                                  │
+                                  ▼
+                  Trading Signal Generation (Buy/Sell)
+                                  │
+                                  ▼
+                         Strategy Backtesting
+                                  │
+                                  ▼
+              Performance & Risk Evaluation
+        ┌───────────────────────────────────────────────┐
+        │ Total Return                                 │
+        │ Annual Return                                │
+        │ Volatility                                   │
+        │ Sharpe Ratio                                 │
+        │ Sortino Ratio                                │
+        │ Maximum Drawdown                             │
+        │ Trade Statistics                             │
+        └───────────────────────────────────────────────┘
+                                  │
+                                  ▼
+             Comparison with Buy & Hold Benchmark
+```
+
 ## Features
 
 - Historical market data collection using Yahoo Finance
